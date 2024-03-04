@@ -25,3 +25,7 @@ There's one really tall spike in 2012, but the original data doesn't have anythi
 Plot 2 contains the information of hectares of each year, with the status indicated by color.
 
 Again, there's one extremely high value that looks like an outlier. But it matches the description, so it's also legit.
+
+"GRAIN_RAW.xlsx" is the raw data with two data sheets.
+
+I included two outputs: if I directly export as csv (data_processed.csv), in the "summary" column, it includes symbols that can't display properly in Excel. The second method (data_processed2.csv) fixes this.
