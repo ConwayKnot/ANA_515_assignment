@@ -6,7 +6,6 @@ install.packages("lubridate",repos = "http://cran.us.r-project.org")
 install.packages("readxl",repos = "http://cran.us.r-project.org")
 install.packages("plyr",repos = "http://cran.us.r-project.org")
 
-
 library("bslib")
 library("tidyverse")
 library("knitr")
@@ -129,7 +128,10 @@ questionable_landgrabber$Landgrabber<-revalue(questionable_landgrabber$Landgrabb
 #paste back
 processing[grepl("\"",processing$Landgrabber),] = questionable_landgrabber
 
-write.csv(processing,'data_processed.csv')
+#Directly exporting may include symbols that can't display properly in Excel
+write.csv(processing,'data_processed.csv', fileEncoding = "UTF-8")
+#This gets rid of the strange symbols
+write_excel_csv(processing,'data_processed2.csv')
 
 #plots
 library("ggplot2")
